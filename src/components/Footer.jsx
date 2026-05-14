@@ -35,10 +35,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Link columns — 2 across then Support centered below on mobile */}
-          <div className="md:contents grid grid-cols-2 gap-10 md:gap-0">
-            {Object.entries(links).map(([section, items], i) => (
-              <div key={section} className={i === 2 ? 'col-span-2 flex flex-col items-center text-center md:items-start md:text-left' : ''}>
+          {/* Link columns — all 3 in one row on mobile */}
+          <div className="md:contents grid grid-cols-3 gap-4 md:gap-0">
+            {Object.entries(links).map(([section, items]) => (
+              <div key={section}>
                 <p className="text-xs font-bold text-white uppercase tracking-widest mb-5">{section}</p>
                 <ul className="space-y-3">
                   {items.map(item => (
