@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
 
         <div className="grid md:grid-cols-4 gap-10 mb-12">
-          {/* Brand column */}
+          {/* Brand column — full width on mobile */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-9 h-9 bg-green-600 rounded-xl flex items-center justify-center">
@@ -35,19 +35,21 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Link columns */}
-          {Object.entries(links).map(([section, items]) => (
-            <div key={section}>
-              <p className="text-xs font-bold text-white uppercase tracking-widest mb-5">{section}</p>
-              <ul className="space-y-3">
-                {items.map(item => (
-                  <li key={item}>
-                    <a href="#" className="text-sm text-slate-500 hover:text-green-400 transition-colors">{item}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Link columns — 2 across then Support centered below on mobile */}
+          <div className="md:contents grid grid-cols-2 gap-10 md:gap-0">
+            {Object.entries(links).map(([section, items], i) => (
+              <div key={section} className={i === 2 ? 'col-span-2 flex flex-col items-center text-center md:items-start md:text-left' : ''}>
+                <p className="text-xs font-bold text-white uppercase tracking-widest mb-5">{section}</p>
+                <ul className="space-y-3">
+                  {items.map(item => (
+                    <li key={item}>
+                      <a href="#" className="text-sm text-slate-500 hover:text-green-400 transition-colors">{item}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
