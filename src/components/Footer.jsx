@@ -1,4 +1,5 @@
 import { Truck } from 'lucide-react'
+import AppBadges from './AppBadges'
 
 const links = {
   Platform: ['Features', 'How It Works', 'Pricing', 'Integrations'],
@@ -26,13 +27,15 @@ export default function Footer() {
             <p className="text-sm leading-relaxed text-slate-500 mb-5">
               Synchronising refuse collection and billing for Nigerian households and local governments.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-3 mb-6">
               {['𝕏', 'in', 'f', '▶'].map(s => (
                 <a key={s} href="#" className="w-9 h-9 bg-slate-800 rounded-lg flex items-center justify-center text-xs text-slate-400 hover:bg-green-600 hover:text-white transition-colors">
                   {s}
                 </a>
               ))}
             </div>
+            <p className="text-xs font-bold text-white uppercase tracking-widest mb-3">Download the App</p>
+            <AppBadges className="!justify-start" />
           </div>
 
           {/* Link columns — all 3 in one row on mobile */}

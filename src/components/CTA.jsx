@@ -1,4 +1,5 @@
 import { ArrowRight, Mail } from 'lucide-react'
+import AppBadges from './AppBadges'
 
 export default function CTA() {
   return (
@@ -16,7 +17,7 @@ export default function CTA() {
         </p>
 
         {/* Email signup */}
-        <div className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto mb-8">
+        <div className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto mb-6">
           <div className="flex-1 relative">
             <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input
@@ -30,9 +31,18 @@ export default function CTA() {
           </button>
         </div>
 
-        <p className="text-green-200 text-xs">
+        <p className="text-green-200 text-xs mb-10">
           Free for 30 days · No credit card needed · Cancel anytime
         </p>
+
+        {/* Divider */}
+        <div className="flex items-center gap-4 max-w-xs mx-auto mb-8">
+          <div className="flex-1 h-px bg-white/20" />
+          <span className="text-white/50 text-xs font-semibold uppercase tracking-widest">or get the app</span>
+          <div className="flex-1 h-px bg-white/20" />
+        </div>
+
+        <AppBadges />
       </div>
     </section>
   )
